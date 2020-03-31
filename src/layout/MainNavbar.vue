@@ -2,7 +2,7 @@
   <md-toolbar
     id="toolbar"
     md-elevation="0"
-    class="md-transparent md-absolute"
+    class="md-dark md-absolute"
     :class="extraNavClasses"
     :color-on-scroll="colorOnScroll"
   >
@@ -40,16 +40,16 @@
               </md-list-item>
 
               <li class="md-list-item">
-                <a
-                  href="javascript:void(0)"
+                <router-link
+                  :to="{ name: 'new_post' }"
                   class="md-list-item-router md-list-item-container md-button-clean"
                 >
                   <div class="md-list-item-content">
                     <md-button class="md-rose md-just-icon md-round"
-                      ><md-icon>email</md-icon></md-button
+                      ><md-icon>edit</md-icon></md-button
                     >
                   </div>
-                </a>
+                </router-link>
               </li>
 
               <li v-if="!true" class="md-list-item">
@@ -66,7 +66,7 @@
                       >
                         <img src="@/assets/img/faces/avatar.jpg" alt="Circle Image" />
                       </div>
-                      <ul class="dropdown-menu dropdown-menu-right">
+                      <ul class="dropdown-menu dropdown-menu-right mt-3">
                         <li class="dropdown-header">Dropdown header</li>
                         <li>
                           <a href="#pablo" class="dropdown-item">Me</a>
@@ -77,7 +77,7 @@
                           >
                         </li>
                         <li>
-                          <a href="#pablo" class="dropdown-item">Sign Out</a>
+                          <a href="#pablo" class="dropdown-item">Đăng xuất</a>
                         </li>
                       </ul>
                     </drop-down>
@@ -96,15 +96,28 @@
                         slot="title"
                         data-toggle="dropdown"
                       >
-                        <img src="@/assets/img/faces/default.png" alt="Circle Image" />
+                        <img
+                          src="@/assets/img/faces/default.png"
+                          alt="Circle Image"
+                        />
                       </div>
-                      <ul class="dropdown-menu dropdown-menu-right">
+                      <ul class="dropdown-menu dropdown-menu-right mt-3">
                         <li class="dropdown-header">Dropdown header</li>
                         <li>
-                          <a href="#pablo" class="dropdown-item">Login</a>
+                          <router-link
+                            :to="{ name: 'login' }"
+                            class="dropdown-item"
+                          >
+                            Đăng Nhập
+                          </router-link>
                         </li>
                         <li>
-                          <a href="#pablo" class="dropdown-item">Signup</a>
+                          <router-link
+                            :to="{ name: 'signup' }"
+                            class="dropdown-item"
+                          >
+                            Đăng ký
+                          </router-link>
                         </li>
                       </ul>
                     </drop-down>

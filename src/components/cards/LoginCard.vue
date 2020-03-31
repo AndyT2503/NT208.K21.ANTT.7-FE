@@ -7,11 +7,13 @@
       </div>
     </md-card-header>
 
-    <md-card-content>
+    <md-card-content data-aos="fade-left" data-aos-delay="100">
       <slot name="description"></slot>
       <slot name="inputs"></slot>
     </md-card-content>
-
+    <md-card-content>
+      <slot name="redirect"></slot>
+    </md-card-content>
     <md-card-actions>
       <slot name="footer"></slot>
     </md-card-actions>

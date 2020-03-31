@@ -15,6 +15,11 @@
                 Tham gia cùng V-GO ngay
               </h4>
               <md-field class="md-form-group" slot="inputs">
+                <md-icon>face</md-icon>
+                <label>First Name...</label>
+                <md-input v-model="firstname"></md-input>
+              </md-field>
+              <md-field class="md-form-group" slot="inputs">
                 <md-icon>email</md-icon>
                 <label>Email...</label>
                 <md-input v-model="email" type="email"></md-input>
@@ -25,8 +30,8 @@
                 <md-input v-model="password"></md-input>
               </md-field>
               <p data-aos="fade-left" data-aos-delay="350" slot="redirect">
-                Chưa có tài khoản?<router-link :to="{ name: 'signup' }">
-                  Đăng ký ngay
+                Đã có tài khoản?<router-link :to="{ name: 'login' }">
+                  Đăng nhập ngay
                 </router-link>
               </p>
               <md-button
@@ -35,7 +40,7 @@
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                Đăng Nhập
+                Đăng Ký
               </md-button>
             </login-card>
           </div>
@@ -48,7 +53,7 @@
 <script>
 import { LoginCard } from "@/components";
 import Lottie from "vue-lottie";
-import connectMap from "@/assets/lotties/connect-map.json";
+import travelMan from "@/assets/lotties/travel-man.json";
 import ScreenSizeMixin from "@/mixins/screen_size.js";
 
 export default {
@@ -56,6 +61,7 @@ export default {
     LoginCard,
     Lottie
   },
+  mixins: [ScreenSizeMixin],
   bodyClass: "login-page",
   data() {
     return {
@@ -63,16 +69,15 @@ export default {
       email: null,
       password: null,
       lottie: {
-        defaultOptions: { animationData: connectMap },
+        defaultOptions: { animationData: travelMan },
         animationSpeed: 1
       }
     };
   },
-  mixins: [ScreenSizeMixin],
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/profile_city.jpg")
+      default: require("@/assets/img/nature-3.jpg")
     }
   },
   computed: {

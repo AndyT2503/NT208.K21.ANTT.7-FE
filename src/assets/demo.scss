@@ -1,0 +1,24 @@
+.title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  min-height: 32px;
+}
+
+.logo-bar {
+  width: 40px;
+  padding-right: 10px;
+}
+
+.profile-content {
+  .ck.ck-editor {
+    margin-top: 30px;
+    width: 100%;
+  }
+  .ck-editor__editable {
+    min-height: 300px;
+  }
+  /*Toolbar*/
+  .ck-editor__top {
+    width: 100%;
+  }  
+}

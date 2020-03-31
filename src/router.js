@@ -6,6 +6,10 @@ import Login from "./views/Login.vue";
 import Profile from "./views/Profile.vue";
 import MainNavbar from "./layout/MainNavbar.vue";
 import MainFooter from "./layout/MainFooter.vue";
+import Signup from "./views/Signup.vue";
+import UserDetail from "./views/UserDetail.vue";
+import NewPost from "./views/NewPost.vue";
+import Feed from "./views/Feed.vue";
 
 Vue.use(Router);
 
@@ -38,9 +42,44 @@ export default new Router({
       }
     },
     {
+      path: "/signup",
+      name: "signup",
+      components: { default: Signup, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 }
+      }
+    },
+    {
       path: "/profile",
       name: "profile",
       components: { default: Profile, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/users/:id",
+      name: "user_detail",
+      components: { default: UserDetail, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/posts/new",
+      name: "new_post",
+      components: { default: NewPost, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: "black" }
+      }
+    },
+    {
+      path: "/feed",
+      name: "feed",
+      components: { default: Feed, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }

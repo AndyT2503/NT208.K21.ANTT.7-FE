@@ -8,7 +8,7 @@
       <div class="section profile-content">
         <div class="container">
           <div class="md-layout">
-            <div class="md-layout-item md-size-50 mx-auto">
+            <div class="md-layout-item md-size-50 mx-auto md-small-size-100">
               <div class="profile">
                 <div class="avatar">
                   <img
@@ -20,21 +20,26 @@
                 <div class="name">
                   <h3 class="title">Carla Hortensia</h3>
                   <h6>Designer</h6>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-dribbble"
-                    ><i class="fab fa-dribbble"></i
-                  ></md-button>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-twitter"
-                    ><i class="fab fa-twitter"></i
-                  ></md-button>
-                  <md-button
-                    href="javascript:void(0)"
-                    class="md-just-icon md-simple md-pinterest"
-                    ><i class="fab fa-pinterest"></i
-                  ></md-button>
+                  <div class="md-layout md-layout-item md-size-100">
+                    <div class="md-layout-item md-size-33">
+                      <h3 class="title">50</h3>
+                      <h4>Followers</h4>
+                    </div>
+                    <div class="md-layout-item md-size-33">
+                      <h3 class="title">50</h3>
+                      <h4>Posts</h4>
+                    </div>
+                    <div class="md-layout-item md-size-33">
+                      <h3 class="title">50</h3>
+                      <h4>Following</h4>
+                    </div>
+                  </div>
+                  <md-button v-if="!true" class="md-success md-round">
+                    Follow
+                  </md-button>
+                  <md-button v-else class="md-danger md-round">
+                    Unfollow
+                  </md-button>
                 </div>
               </div>
             </div>
@@ -49,8 +54,8 @@
           </div>
           <div class="profile-tabs">
             <tabs
-              :tab-name="['Studio', 'Work', 'Favorite']"
-              :tab-icon="['camera', 'palette', 'favorite']"
+              :tab-name="['Posts', 'Follower', 'Following']"
+              :tab-icon="['description', 'group', 'favorite']"
               plain
               nav-pills-icons
               color-button="success"

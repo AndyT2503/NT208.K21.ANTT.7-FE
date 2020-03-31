@@ -11,15 +11,20 @@
 // =========================================================
 //
 // * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
+// import 'bootstrap'
+import "bootstrap/dist/css/bootstrap.min.css";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import CKEditor from "@ckeditor/ckeditor5-vue";
 
 import MaterialKit from "./plugins/material-kit";
 
 Vue.config.productionTip = false;
 
+Vue.use(CKEditor);
 Vue.use(MaterialKit);
 
 const NavbarStore = {
@@ -36,5 +41,10 @@ Vue.mixin({
 
 new Vue({
   router,
+  mounted() {
+    AOS.init({
+      once: false
+    });
+  },
   render: h => h(App)
 }).$mount("#app");
