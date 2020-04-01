@@ -3,43 +3,72 @@
     <div class="main">
       <div class="section profile-content">
         <div class="container">
-          <div v-for="index in 10" :key="index" class="md-layout md-layout-item md-size-66 md-small-size-100 my-3">
-            <div class="md-layout md-layout-item activity-box">
-              <div class="md-layout-item md-size-100 d-flex activity-box--header">
-                <div class="profile-photo">
-                  <img class="rounded-circle" src="@/assets/img/faces/avatar.jpg" />
+          <div class="md-layout">
+            <div class="md-layout-item md-size-70 md-small-size-100">
+              <div v-for="index in 10" :key="index" class="my-3">
+                <div class="md-layout md-layout-item activity-box">
+                  <div
+                    class="md-layout-item md-size-100 d-flex activity-box--header"
+                  >
+                    <div class="profile-photo">
+                      <img
+                        class="rounded-circle"
+                        src="@/assets/img/faces/avatar.jpg"
+                      />
+                    </div>
+                    <div class="ml-3">
+                      <router-link class="h5" :to="{ name: 'profile' }">
+                        Jenifer Law
+                      </router-link>
+                      Write a post
+                      <p class="text-muted">2 hours ago</p>
+                    </div>
+                  </div>
+                  <div class="md-layout-item md-size-100 mt-3">
+                    Bootdey is a gallery of free snippets resources templates
+                    and utilities for bootstrap css hmtl js framework. Codes for
+                    developers and web designers
+                    <div class="m-3">
+                      <img class="w-100" src="@/assets/img/faces/avatar.jpg" />
+                    </div>
+                  </div>
+                  <div class="my-1">
+                    <md-button v-if="true" class="md-rose md-sm md-round">
+                      <md-icon class="mr-1">favorite</md-icon> 20
+                    </md-button>
+                    <md-button v-if="true" class="md-info md-sm md-round ml-3">
+                      <md-icon class="mr-1">comment</md-icon> 20
+                    </md-button>
+                  </div>
+                  <hr class="w-100 my-1" />
+                  <div class="d-flex mt-1 align-items-center w-100">
+                    <!-- <div class="profile-photo--comment mr-3">
+                      <img class="rounded-circle" src="@/assets/img/faces/avatar.jpg" />
+                    </div> -->
+                    <md-field class="flex-fill">
+                      <md-icon>comment</md-icon>
+                      <label>Leave a comment</label>
+                      <md-input v-model="floatingLabel" type="text"></md-input>
+                    </md-field>
+                  </div>
+                  <div class="d-flex mt-1 align-items-center w-100">
+                    <img
+                      class="profile-photo--comments rounded-circle"
+                      src="@/assets/img/faces/avatar.jpg"
+                    />
+                    <div class="flex-fill ml-3">
+                      <router-link class="h5" :to="{ name: 'profile' }">
+                        Jenifer Law
+                      </router-link>
+                      Can i take a picture?
+                      <p class="text-muted m-0">2 hours ago</p>
+                    </div>
+                  </div>
                 </div>
-                <div class="ml-3">
-                  <router-link class="h5" :to="{ name: 'profile' }">Jenifer Law</router-link> Write a post
-                  <p class="text-muted">2 hours ago</p>
-                </div>
               </div>
-              <div class="md-layout-item md-size-100 mt-3">
-                Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers
-                <div class="m-3"><img class="w-100" src="@/assets/img/faces/avatar.jpg" /></div>
-              </div>
-              <div class="my-1">
-                <md-button v-if="true" class="md-rose md-sm md-round"><md-icon class="mr-1">favorite</md-icon> 20</md-button>
-                <md-button v-if="true" class="md-info md-sm md-round ml-3"><md-icon class="mr-1">comment</md-icon> 20</md-button>
-              </div>
-              <hr class="w-100 my-1" />
-              <div class="d-flex mt-1 align-items-center w-100">
-                <!-- <div class="profile-photo--comment mr-3">
-                  <img class="rounded-circle" src="@/assets/img/faces/avatar.jpg" />
-                </div> -->
-                <md-field class="flex-fill">
-                  <md-icon>comment</md-icon>
-                  <label>Leave a comment</label>
-                  <md-input v-model="floatingLabel" type="text"></md-input>
-                </md-field>
-              </div>
-              <div class="d-flex mt-1 align-items-center w-100">
-                <img class="profile-photo--comments rounded-circle" src="@/assets/img/faces/avatar.jpg" />
-                <div class="flex-fill ml-3">
-                  <router-link class="h5" :to="{ name: 'profile' }">Jenifer Law</router-link> Can i take a picture?
-                  <p class="text-muted m-0">2 hours ago</p>
-                </div>
-              </div>
+            </div>
+            <div class="md-layout-item md-size-30 md-small-size-100">
+              Box search
             </div>
           </div>
         </div>
@@ -97,8 +126,8 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-    margin-top: 70px;
-    min-height: calc(100vh - 154px);
+  margin-top: 70px;
+  min-height: calc(100vh - 154px);
 }
 .profile-content {
   padding-top: 20px;
